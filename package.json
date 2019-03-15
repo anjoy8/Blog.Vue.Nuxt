@@ -1,0 +1,28 @@
+{
+  "name": "Blog.Vue.Nuxt",
+  "version": "1.0.0",
+  "description": "My unreal Nuxt.js project",
+  "author": "anjoy8",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "config": {
+    "nuxt": {
+      "host": "127.0.0.1",
+      "port": "26898"
+    }
+  },
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "nuxt": "^2.4.0",
+    "element-ui": "^2.4.11",
+    "@nuxtjs/axios": "^5.3.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
