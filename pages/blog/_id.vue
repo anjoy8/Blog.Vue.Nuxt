@@ -1,5 +1,12 @@
 <template>
   <div class="post-page">
+
+    <ul class="navigations">
+
+      <nuxt-link to="/" tag="li">
+        <i class="iconfont icon-homepage" title="回到首页">回到首页</i>
+      </nuxt-link>
+    </ul>
     <h1 class="title">{{data.btitle}}</h1>
     <p class="createTime">{{data.bCreateTime | timeFormat}}</p>
 
@@ -22,7 +29,7 @@
       // 获取文章详情
       try {
 
-        const { data } = await axios.get(`/api/blog/${params.id}`)
+        const { data } = await axios.get(`/api/blog/DetailNuxtNoPer?id=${params.id}`)
 
         return {
           data: data.data
@@ -56,23 +63,30 @@
         return time;
       }
     },
-    mounted () {
-      if (!(window.localStorage.Token)) {
-        this.$router.push({ path: `/login` })
-
-      }
-      let id = this.$route.params.id
-      axios.get(`/api/blog/${id}`).then(
-        respone => {
-
-          const tagList = (respone.data.data || [])
-          this.data = tagList
-
-        })
-    },
     components: {
     }
   };
 </script>
 
+<style >
+
+  .navigations {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+  .navigations > li {
+    margin: 10px 20px;
+    cursor: pointer;
+    transition: all .3s;
+  }
+  .navigations > li:hover {
+    transform: scale(1.5);
+  }
+  .navigations > li .iconfont {
+    font-size: 24px;
+  }
+
+</style>
 

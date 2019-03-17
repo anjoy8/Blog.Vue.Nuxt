@@ -43,8 +43,9 @@
     z-index: -1;
     width: 100%;
     height: 100%;
+    background: url("/background-code.png") no-repeat fixed top;
     background-size: cover;
-    opacity: 0.1;
+    opacity: 0.2;
     filter: blur(2px);
   }
 </style>

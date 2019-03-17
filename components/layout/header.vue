@@ -1,22 +1,21 @@
 <template lang="html">
     <header>
-        <img :src="require('~/assets/images/avatar.jpg')" alt="avatar" class="avatar">
-        <p class="name">老张的哲学</p>
+        <img :src="require('~/assets/images/avatar.jpg')" alt="avatar" class="avatar" @click="gohome">
+        <p class="name"  @click="gohome">
+          <img :src="require('~/assets/images/avatar-default.png')" alt="avatar" class="avatar-de">
+          老张的哲学</p>
         <p class="description">Software Engineer.Currently working in Microsoft co-operation!</p>
-        <ul class="navigations">
-            <nuxt-link to="/" tag="li">
-                <i class="iconfont icon-homepage" title="回到首页">回到首页</i>
-            </nuxt-link>
-            <nuxt-link to="/post" tag="li">
-                <i class="iconfont icon-activity" title="全部文章"></i>
-            </nuxt-link>
-          <nuxt-link to="/about" tag="li">
-                <i class="iconfont icon-people" title="关于我"></i>
-            </nuxt-link>
-          <li>
-                <!--<i class="iconfont icon-login" title="登录解锁更多姿势与我深入交流吧" @click="$store.commit('changeLoginBoxVisible', true)"></i>-->
-            </li>
-        </ul>
+        <!--<ul class="navigations">-->
+            <!--<nuxt-link to="/post" tag="li">-->
+                <!--<i class="iconfont icon-activity" title="全部文章"></i>-->
+            <!--</nuxt-link>-->
+          <!--<nuxt-link to="/about" tag="li">-->
+                <!--<i class="iconfont icon-people" title="关于我"></i>-->
+            <!--</nuxt-link>-->
+          <!--<li>-->
+                <!--&lt;!&ndash;<i class="iconfont icon-login" title="登录解锁更多姿势与我深入交流吧" @click="$store.commit('changeLoginBoxVisible', true)"></i>&ndash;&gt;-->
+            <!--</li>-->
+        <!--</ul>-->
 
         <!-- 登录弹窗 -->
         <!--<transition name="fade">-->
@@ -50,7 +49,12 @@ export default {
     data () {
         return {};
     },
-    methods: {}
+    methods: {
+      gohome(){
+        this.$router.push({ path: '/home' })
+
+      },
+    }
 };
 </script>
 
@@ -72,10 +76,19 @@ export default {
       height: 128px;
       border-radius: 50%;
       opacity: 0.6;
+      cursor: pointer;
+    }
+    header .avatar-de{
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-bottom: -8px;
     }
     header .name {
       margin: 20px 0;
       font-weight: bold;
+      cursor: pointer;
     }
     header  .description {
       padding: 0 20px;

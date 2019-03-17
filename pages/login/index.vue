@@ -27,6 +27,7 @@
       methods: {
         login: function() {
           let that = this;
+          let redirect = that.$route.query.redirect
           that.$store.commit("saveToken", "");
           this.$refs.loginForm.validate(valid => {
             if (valid) {
@@ -42,7 +43,7 @@
                       message: "欢迎你," + this.user.name + "!",
                       duration: 3000
                     });
-                  this.$router.replace("/");
+                  this.$router.push({ path: redirect ? redirect:'/' })
                 }
               }).catch(err => {
                 console.log("点赞失败", err);
