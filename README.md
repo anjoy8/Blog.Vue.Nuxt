@@ -1,7 +1,7 @@
 
 
 ﻿
-<img src="https://github.com/anjoy8/Blog.Admin/blob/master/src/assets/logoall.png" width="350"  />
+<img src="https://github.com/anjoy8/Blog.Vue.Nuxt/blob/master/static/logo1.png" width="350"  />
 
       
       
@@ -44,11 +44,13 @@ $ npm run generate
 
 **本地访问http://localhost:26898**
 ```
-可以在根目录的 nuxt.config.js 中修改端口：
+可以在根目录的 package.json 中修改端口：
 
-  "devServer": {
-     "host": "127.0.0.1",
-     "port": "26898//端口号
+  "config": {
+    "nuxt": {
+      "host": "127.0.0.1",
+      "port": "26898"
+    }
   },
   
   
